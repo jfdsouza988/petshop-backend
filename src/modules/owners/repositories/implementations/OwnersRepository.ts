@@ -38,6 +38,15 @@ class OwnersRepository implements IOwnersRepository {
     })
     return owner
   }
+
+  async delete (id: string): Promise<Owner> {
+    const owner = await prisma.owner.delete({
+      where: {
+        id
+      }
+    })
+    return owner
+  }
 }
 
 export { OwnersRepository }

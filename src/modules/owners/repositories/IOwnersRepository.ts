@@ -6,6 +6,7 @@ interface IOwnersRepository {
   list: () => Promise<Owner[]>
   update: (data: IUpdateOwnerDTO) => Promise<Owner>
   findById: (id: string) => Promise<Owner | null>
+  delete: (id: string) => Promise<Owner>
 }
 
 export { IOwnersRepository }
