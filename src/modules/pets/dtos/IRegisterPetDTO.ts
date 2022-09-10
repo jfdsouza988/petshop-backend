@@ -3,7 +3,7 @@ export interface IPet {
   name: string
   breed: string
   age: number
-  owner: any
+  ownerId: string
   type: string
 }
 

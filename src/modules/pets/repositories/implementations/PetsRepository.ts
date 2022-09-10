@@ -27,7 +27,11 @@ class PetsRepository implements IPetsRepository {
   }
 
   async list (): Promise<Pet[]> {
-    const pets = await prisma.pet.findMany()
+    const pets = await prisma.pet.findMany({
+      include: {
+        owner: true
+      }
+    })
     return pets
   }
 }

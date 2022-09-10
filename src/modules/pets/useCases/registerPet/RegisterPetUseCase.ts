@@ -5,7 +5,7 @@ interface IRequest {
   name: string
   breed: string
   age: number
-  owner: any
+  ownerId: string
   type: string
 }
 
@@ -16,12 +16,12 @@ class RegisterPetUseCase {
     private readonly petsRepository: IPetsRepository
   ) {}
 
-  async execute ({ name, breed, age, owner, type }: IRequest) {
+  async execute ({ name, breed, age, ownerId, type }: IRequest) {
     const pet = await this.petsRepository.create({
       name,
       breed,
       age,
-      owner,
+      ownerId,
       type
     })
 
