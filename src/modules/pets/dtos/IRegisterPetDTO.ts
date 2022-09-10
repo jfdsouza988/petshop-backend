@@ -1,4 +1,4 @@
-interface IPet {
+export interface IPet {
   id: string
   name: string
   breed: string

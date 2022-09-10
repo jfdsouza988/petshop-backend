@@ -13,7 +13,7 @@ model Pet {
   age       Int
   breed     String
   type      String
-  owner     User?    @relation(fields: [ownerId], references: [id])
+  owner     Owner?   @relation(fields: [ownerId], references: [id])
   ownerId   String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -21,14 +21,14 @@ model Pet {
   @@map("pet")
 }
 
-model User {
+model Owner {
   id        String   @id @default(uuid())
   name      String
   phone     String
   address   String
-  Pet       Pet[]
+  pets      Pet[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@map("user")
+  @@map("owner")
 }
