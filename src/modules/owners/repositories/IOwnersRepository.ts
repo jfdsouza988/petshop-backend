@@ -1,9 +1,11 @@
 import { Owner } from '@prisma/client'
-import { IRegisterOwnerDTO } from '../dtos/IRegisterOwnerDTO'
+import { IRegisterOwnerDTO, IUpdateOwnerDTO } from '../dtos/IRegisterOwnerDTO'
 
 interface IOwnersRepository {
   create: (data: IRegisterOwnerDTO) => Promise<Owner>
   list: () => Promise<Owner[]>
+  update: (data: IUpdateOwnerDTO) => Promise<Owner>
+  findById: (id: string) => Promise<Owner | null>
 }
 
 export { IOwnersRepository }
