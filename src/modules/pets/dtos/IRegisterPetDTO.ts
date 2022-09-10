@@ -8,4 +8,4 @@ export interface IPet {
 }
 
 export interface IRegisterPetDTO extends Omit<IPet, 'id'> {}
-export interface IUpdatePetDTO extends Omit<IPet, 'owner'> {}
+export interface IUpdatePetDTO extends Omit<IPet, 'ownerId'> {}

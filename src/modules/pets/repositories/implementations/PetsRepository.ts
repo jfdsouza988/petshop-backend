@@ -34,6 +34,20 @@ class PetsRepository implements IPetsRepository {
     })
     return pets
   }
+
+  async findByName (name: string): Promise<Pet[]> {
+    const pets = await prisma.pet.findMany({
+      where: {
+        name: {
+          contains: name
+        }
+      },
+      include: {
+        owner: true
+      }
+    })
+    return pets
+  }
 }
 
 export { PetsRepository }
