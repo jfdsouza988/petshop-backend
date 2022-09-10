@@ -1,8 +1,9 @@
 import { Pet } from '@prisma/client'
-import { IRegisterPetDTO } from '../dtos/IRegisterPetDTO'
+import { IRegisterPetDTO, IUpdatePetDTO } from '../dtos/IRegisterPetDTO'
 
 interface IPetsRepository {
   create: (data: IRegisterPetDTO) => Promise<Pet>
+  update: (data: IUpdatePetDTO) => Promise<Pet>
 }
 
 export { IPetsRepository }

@@ -1,4 +1,4 @@
-import { injectable } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 import { IPetsRepository } from '../../repositories/IPetsRepository'
 
 interface IRequest {
@@ -12,6 +12,7 @@ interface IRequest {
 @injectable()
 class RegisterPetUseCase {
   constructor (
+    @inject('PetsRepository')
     private readonly petsRepository: IPetsRepository
   ) {}
 

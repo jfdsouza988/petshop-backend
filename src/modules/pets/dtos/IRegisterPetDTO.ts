@@ -1,9 +1,11 @@
-interface IRegisterPetDTO {
+interface IPet {
+  id: string
   name: string
-  age: number
   breed: string
-  type: string
+  age: number
   owner: any
+  type: string
 }
 
-export { IRegisterPetDTO }
+export interface IRegisterPetDTO extends Omit<IPet, 'id'> {}
+export interface IUpdatePetDTO extends Omit<IPet, 'owner'> {}
