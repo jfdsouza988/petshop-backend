@@ -23,9 +23,10 @@ Projeto desenvolvido para o processo seletivo da REFERO.ai. A API consiste em um
 ## 🚀 Como executar
 
 - Clone o repositório
-- Instale as dependências com `npm install ou yarn`
-- Inicie o container do MySql com `docker-compose up -d`
-- Inicie o servidor com `npm run dev ou yarn dev`
+- Instale as dependências com `npm install`
+- Inicie o container do banco de dados MySql com `docker-compose up -d`
+- Sincronize o schema do Prisma com o BD usando `npx prisma db push`
+- Inicie o servidor com `npm run dev`
 
 Agora a API está rodando na porta 4000 da sua máquina [`localhost:4000/`](http://localhost:4000/).
 
