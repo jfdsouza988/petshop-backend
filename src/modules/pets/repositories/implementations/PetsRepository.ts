@@ -25,6 +25,11 @@ class PetsRepository implements IPetsRepository {
     })
     return pet
   }
+
+  async list (): Promise<Pet[]> {
+    const pets = await prisma.pet.findMany()
+    return pets
+  }
 }
 
 export { PetsRepository }
